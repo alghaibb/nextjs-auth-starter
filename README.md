@@ -1,76 +1,271 @@
-# Next.js Auth Starter
+# 🔐 Next.js Auth Starter
 
-Welcome to my **Next.js Auth Starter** kit project! This template aims to make starting a project with authentication simple, quick, and efficient using the latest technologies and best practices.
+<div align="center">
 
-## Purpose
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)
+![Auth.js](https://img.shields.io/badge/Auth.js-v5-green?style=for-the-badge)
+![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=for-the-badge&logo=tailwind-css)
 
-The purpose of this project is to provide a robust and easy-to-use starter template for authentication in Next.js applications. It leverages Next.js 14, Auth.js v5, Prisma ORM, Tailwind CSS for styling, Zod for validation, and other modern tools to streamline the development process.
+A production-ready Next.js 14 authentication starter template with modern best practices, comprehensive security features, and beautiful UI components.
 
-## Motivation
+[Demo](#) • [Documentation](#) • [Report Bug](#) • [Request Feature](#)
 
-Starting a new project often involves setting up a lot of boilerplate code for authentication, validation, styling, and more. This can be time-consuming and repetitive. The `nextjs-auth-starter` aims to eliminate this hassle by providing a ready-to-use template with all the essential features pre-configured, allowing developers to focus on building their application rather than setting up the basics.
+</div>
 
-## Features
+## 📋 Table of Contents
 
-- **Next.js 14 with Turbo Mode:** Fast and efficient development with the latest features of Next.js.
-- **Auth.js v5:** Secure and flexible authentication system.
-- **Prisma ORM:** Powerful and intuitive ORM for database management.
-- **Tailwind CSS:** Utility-first CSS framework for quick and responsive design.
-- **Zod:** Schema declaration and validation library for form validation.
-- **Next.js Server Actions:** Modern approach to handle API routes.
-- **React Email:** Comprehensive library for creating email templates.
-- **bcrypt:** Secure password hashing and comparison.
-- **Shadcn UI:** Accessible UI components.
-- **Email Verification and Password Reset:** Includes email sending for account verification and password reset, using OTP codes for verification.
+- [Overview](#-overview)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Quick Start](#-quick-start)
+- [Environment Setup](#-environment-setup)
+- [Database Setup](#-database-setup)
+- [Authentication Flow](#-authentication-flow)
+- [Project Structure](#-project-structure)
+- [Components](#-components)
+- [API Routes](#-api-routes)
+- [Email Templates](#-email-templates)
+- [Security Features](#-security-features)
+- [Customization](#-customization)
+- [Deployment](#-deployment)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-## Getting Started
+## 🎯 Overview
+
+**Next.js Auth Starter** is a comprehensive, production-ready authentication template built with Next.js 14 and modern web technologies. It provides a solid foundation for building secure web applications with user authentication, email verification, password reset functionality, and more.
+
+### Why Choose This Starter?
+
+- **🚀 Production Ready**: Built with enterprise-grade security and best practices
+- **🔒 Complete Auth Flow**: Registration, login, email verification, password reset
+- **💎 Modern Stack**: Latest versions of Next.js, Auth.js, Prisma, and Tailwind CSS
+- **📱 Responsive Design**: Mobile-first design with beautiful UI components
+- **🛡️ Type Safe**: Fully typed with TypeScript and Zod validation
+- **📧 Email Integration**: Pre-built email templates with Resend integration
+- **🎨 Customizable**: Easy to customize and extend for your needs
+
+## ✨ Features
+
+### 🔐 Authentication Features
+
+- **User Registration** with email verification
+- **Secure Login** with credential validation
+- **Email Verification** using OTP codes
+- **Password Reset** functionality
+- **Resend Verification** emails
+- **Protected Routes** with middleware
+- **Role-based Access Control** (User/Admin roles)
+- **Session Management** with JWT tokens
+
+### 🎨 UI/UX Features
+
+- **Responsive Design** for all devices
+- **Dark/Light Mode** support (Tailwind CSS)
+- **Accessible Components** built with Radix UI
+- **Form Validation** with real-time feedback
+- **Loading States** and error handling
+- **Custom Message Components** for user feedback
+- **Beautiful Email Templates** with React Email
+
+### 🛠️ Developer Features
+
+- **TypeScript** for type safety
+- **Server Actions** for API calls
+- **Zod Schemas** for data validation
+- **Prisma ORM** for database operations
+- **ESLint** configuration for code quality
+- **Turbo Mode** for faster development
+
+## 🛠️ Tech Stack
+
+### Core Framework
+
+- **[Next.js 14](https://nextjs.org/)** - React framework with App Router
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[React 18](https://reactjs.org/)** - UI library
+
+### Authentication & Security
+
+- **[Auth.js v5](https://authjs.dev/)** - Authentication library
+- **[bcrypt](https://github.com/kelektiv/node.bcrypt.js)** - Password hashing
+- **[Zod](https://zod.dev/)** - Schema validation
+
+### Database & ORM
+
+- **[Prisma](https://www.prisma.io/)** - Next-generation ORM
+- **[PostgreSQL](https://www.postgresql.org/)** - Relational database
+- **[Vercel Postgres](https://vercel.com/storage/postgres)** - Managed PostgreSQL
+
+### Styling & UI
+
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Radix UI](https://www.radix-ui.com/)** - Unstyled, accessible components
+- **[Lucide React](https://lucide.dev/)** - Beautiful icons
+- **[React Icons](https://react-icons.github.io/react-icons/)** - Icon library
+
+### Email & Communication
+
+- **[React Email](https://react.email/)** - Email template builder
+- **[Resend](https://resend.com/)** - Email delivery service
+
+### Form Handling
+
+- **[React Hook Form](https://react-hook-form.com/)** - Form library
+- **[Input OTP](https://input-otp.rodz.dev/)** - OTP input component
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js v14 or later
-- Yarn or npm
+- **Node.js** 18.17 or later
+- **npm**, **yarn**, or **pnpm**
+- **PostgreSQL** database (local or cloud)
+- **Resend** account for email functionality
 
 ### Installation
 
-1.  Clone the repository:
-    `git clone https://github.com/alghaibb/nextjs-auth-starter.git
-cd nextjs-auth-starter`
+1. **Clone the repository**
 
-2.  Install dependencies:
-    `yarn install
+   ```bash
+   git clone https://github.com/alghaibb/nextjs-auth-starter.git
+   cd nextjs-auth-starter
+   ```
 
-    # or
+2. **Install dependencies**
 
-    npm install`
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-3.  Set up environment variables: Create a `.env` file in the root directory and add your environment variables. For example:
-    // URLS
+3. **Set up environment variables**
 
-    NEXT_PUBLIC_BASE_URL="http://localhost:3000"
+   ```bash
+   cp .env.example .env.local
+   ```
 
-    // VERCEL POSTGRES CREDENTIALS
+4. **Configure your environment** (see Environment Setup section below)
 
-    - POSTGRES_URL=""
-    - POSTGRES_PRISMA_URL=""
-    - POSTGRES_URL_NO_SSL=""
-    - POSTGRES_URL_NON_POOLING=""
-    - POSTGRES_USER=""
-    - POSTGRES_HOST=""
-    - POSTGRES_PASSWORD=""
-    - POSTGRES_DATABASE=""
+5. **Set up the database**
 
-    // AUTHJS CREDENTIALS
+   ```bash
+   npx prisma generate
+   npx prisma db push
+   ```
 
-    - AUTH_SECRET=""
+6. **Start the development server**
 
-    // RESEND/EMAILS CREDENTIALS
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
 
-    - RESEND_API_KEY=""
+7. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-4.  Run the development server:
-    `yarn dev
-or
-npm run dev`
+## 🔧 Environment Setup
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```env
+# Application URL
+NEXT_PUBLIC_BASE_URL="http://localhost:3000"
+
+# Database (Vercel Postgres)
+POSTGRES_URL=""
+POSTGRES_PRISMA_URL=""
+POSTGRES_URL_NO_SSL=""
+POSTGRES_URL_NON_POOLING=""
+POSTGRES_USER=""
+POSTGRES_HOST=""
+POSTGRES_PASSWORD=""
+POSTGRES_DATABASE=""
+
+# Authentication Secret
+AUTH_SECRET=""
+
+# Email Service (Resend)
+RESEND_API_KEY=""
+```
+
+### Environment Variables Explained
+
+| Variable               | Description                                                         | Required |
+| ---------------------- | ------------------------------------------------------------------- | -------- |
+| `NEXT_PUBLIC_BASE_URL` | Your application's base URL                                         | ✅       |
+| `POSTGRES_*`           | Database connection strings from Vercel Postgres                    | ✅       |
+| `AUTH_SECRET`          | Secret key for JWT tokens (generate with `openssl rand -base64 32`) | ✅       |
+| `RESEND_API_KEY`       | API key from Resend for email functionality                         | ✅       |
+
+### Getting API Keys
+
+#### Resend API Key
+
+1. Sign up at [Resend](https://resend.com/)
+2. Go to API Keys section
+3. Create a new API key
+4. Add it to your `.env.local` file
+
+#### Vercel Postgres
+
+1. Create a project on [Vercel](https://vercel.com/)
+2. Go to Storage tab
+3. Create a new Postgres database
+4. Copy the connection strings to your `.env.local` file
+
+## 🗄️ Database Setup
+
+### Schema Overview
+
+The application uses the following database models:
+
+- **User** - User accounts with authentication data
+- **Account** - OAuth account linking (Auth.js)
+- **VerificationToken** - Email verification tokens
+- **ResetPasswordToken** - Password reset tokens
+
+### Database Commands
+
+```bash
+# Generate Prisma client
+npx prisma generate
+
+# Push schema to database
+npx prisma db push
+
+# Open Prisma Studio (database GUI)
+npx prisma studio
+
+# Reset database (careful!)
+npx prisma db push --force-reset
+```
+
+### User Model Structure
+
+```prisma
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String
+  salt          String
+  role          Role      @default(USER)
+  accounts      Account[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+```
 
 # Usage
 
